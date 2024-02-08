@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Adam Bouafia",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -76.67, "left": -177.33, "attrs": {} },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht1",
+      "top": -71.37,
+      "left": -56.51,
+      "attrs": { "temperature": "20.2" }
+    },
+    {
+      "type": "wokwi-biaxial-stepper",
+      "id": "stepper2",
+      "top": -217.3,
+      "left": -394.94,
+      "rotate": 270,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:3V3", "dht1:VCC", "red", [ "v-0.79", "h65.53" ] ],
+    [ "dht1:SDA", "esp:D15", "green", [ "v0" ] ],
+    [ "stepper2:B2-", "esp:D13", "black", [ "v0" ] ],
+    [ "stepper2:B2+", "esp:D12", "green", [ "v0" ] ],
+    [ "stepper2:A2+", "esp:D14", "red", [ "v0" ] ],
+    [ "stepper2:A2-", "esp:D27", "blue", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

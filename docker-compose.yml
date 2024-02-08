@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  nodered:
+    image: adambouafia/smartfan_univaq_image:latest
+    ports:
+      - "1880:1880"
+    networks:
+      - sf-univaq-net
+
+  influxdb:
+    image: influxdb:2.7.5
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=adam.bouafia
+      - DOCKER_INFLUXDB_INIT_PASSWORD=00000000
+      - DOCKER_INFLUXDB_INIT_ORG=A&R
+      - DOCKER_INFLUXDB_INIT_BUCKET=smart_fan
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=YtSTZaPMzl8nI1WCfL0CNOPAn4sPgmzcO2FGMxiYTiq6We6BzB1tAygP55pBl3Kht_mGpNfkbHPCb1Vtyo96UQ==
+    networks:
+      - sf-univaq-net
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana-gaz-dashboard:/etc/grafana/provisioning/dashboards
+      - ./grafana-provisioning:/etc/grafana/provisioning/datasources
+    depends_on:
+      - influxdb
+    networks:
+      - sf-univaq-net
+
+volumes:
+  influxdb-data:
+  grafana-data:
+
+networks:
+  univaq-net:
