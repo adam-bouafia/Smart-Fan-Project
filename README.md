@@ -1,10 +1,13 @@
 Smart Fan Project - SE4IOT
 
 Introduction :
-The Smart Fan project is an innovative IoT solution designed to optimize environmental conditions through real-time temperature and humidity control. Utilizing a Wokwi simulation for development and testing, the system employs MQTT for efficient data transmission from sensors to a Node-RED server. This data includes temperature, humidity, and dynamically adjusted fan speed, making the fan "smart" by adapting to the current environment.
+The Smart Fan project is an innovative IoT solution designed to optimize environmental conditions through real-time temperature and humidity control. Utilizing a Wokwi simulation for development and testing, the system employs MQTT for efficient data transmission from sensors to a Node-RED server.
+This data includes temperature, humidity, and dynamically adjusted fan speed, making the fan "smart" by adapting to the current environment.
 
 Academic Context
-This Smart Fan project was developed as part of the "Software Engineering for Internet of Things" course at the University of L'Aquila (Univaq). It serves as a practical application of IoT principles, software engineering practices, and real-world data handling in a connected environment. Contributions and insights from fellow students and faculty are highly encouraged to foster a collaborative learning experience.
+This Smart Fan project was developed as part of the "Software Engineering for Internet of Things" course at the University of L'Aquila (Univaq).
+It serves as a practical application of IoT principles, software engineering practices, and real-world data handling in a connected environment.
+Contributions and insights from fellow students and faculty are highly encouraged to foster a collaborative learning experience.
 
 Architecture : 
 Wokwi Simulation: Simulates the ESP32-based smart fan, capturing temperature, humidity, and controlling fan speed.
@@ -42,13 +45,18 @@ Contributing:
 We welcome contributions to the Smart Fan project! If you have ideas for improvements, bug fixes, or new features, please follow these steps:
 
 Fork the Repository: Start by forking the project repository to your own GitHub account.
+
 Create a Branch: For each new feature or fix, create a new branch from main.
+
 Follow Coding Standards: Ensure your code adheres to the coding standards used throughout the project.
+
 Submit a Pull Request: Once your feature or fix is ready, submit a pull request against the main branch of the original repository.
+
 Issue Reporting: For bugs or feature requests, please open an issue providing as much detail as possible.
 
 License:
-This project is the property of Adam-Bouafia and is licensed under the MIT License. This license allows others to use, modify, and distribute the work, provided they attribute it back to the author. The full license text can be found in the LICENSE file in the project repository.
+This project is the property of Adam-Bouafia and is licensed under the MIT License.
+This license allows others to use, modify, and distribute the work, provided they attribute it back to the author. The full license text can be found in the LICENSE file in the project repository.
 
 By contributing to this project, you agree that your contributions will be licensed under its MIT License.
 
