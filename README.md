@@ -28,16 +28,27 @@ This project leverages Docker to simplify deployment and management of its compo
 
 Docker Compose
 Clone the project repository to your local machine.
+
 Navigate to the project directory where docker-compose.yml is located.
-Run docker-compose up -d to start all services in detached mode. This command pulls necessary images and starts the services defined in docker-compose.yml, including Node-RED, InfluxDB, and Grafana.
+
+Run docker-compose up -d to start all services in detached mode.
+This command pulls necessary images and starts the services defined in docker-compose.yml, including Node-RED, InfluxDB, and Grafana.
+
 Accessing Services
 Node-RED: Access the Node-RED editor by navigating to http://localhost:1880 on your web browser.
+
 InfluxDB: InfluxDB UI can be accessed at http://localhost:8086. Use the credentials defined in the environment variables of docker-compose.yml for initial login.
+
 Grafana: Open http://localhost:3000 to access Grafana. Default login is admin/admin. Configure InfluxDB as the data source using the InfluxDB details.
+
 Configuration Details
+
 Node-RED Flow: Import the provided Node-RED flow configuration to set up the data processing pipeline.
+
 Telegram Bot: Ensure the Telegram bot token is correctly configured in your Node-RED flow for notifications.
+
 Grafana Dashboard: Import the Grafana dashboard JSON to visualize temperature, humidity, and fan speed data.
+
 Final Steps
 After setting up all services, your Smart Fan project is ready. The system will automatically start collecting data, storing it in InfluxDB, sending notifications through Telegram, and visualizing data in Grafana based on the temperature and humidity readings from your Wokwi simulation.
 
